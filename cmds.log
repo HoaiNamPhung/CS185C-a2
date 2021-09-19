@@ -1,0 +1,729 @@
+  815  cut -d ' ' -f 9 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -nr | cat
+  816  cd
+  817  cut -d ' ' -f 9 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -nr | cat
+  818  cut -d ' ' -f 9 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -nr | head
+  819  head amazon_reviews_us_Books_v1_02.tsv
+  820  cd CS185C/ws/ws3
+  821  ls
+  822  cat ws3.txt
+  823  cd ..
+  824  cd assignments
+  825  touch
+  826  ls
+  827  mkdir a2
+  828  ls a2cd
+  829  cd
+  830  script a2.txt
+  831  ls
+  832  head amazon_reviews_us_Books_v1_02.tsv
+  833  cut -d ' ' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | wc -l
+  834  cut -d ' ' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | wc -l
+  835  cut -d ' ' -f 6 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | wc -l
+  836  cut -d '	' -f 6 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | wc -l
+  837  cut -d '' -f 6 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | wc -l
+  838  cut -d ' ' -f 6 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | wc -l
+  839  less a2.txt
+  840  rm a2.txt
+  841  ls
+  842  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | wc -l
+  843  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | wc -l
+  844  awk -F"\t" '$2 > /1/ {print $2} amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c |
+  845  mkdir CUSTOMERS
+  846  mkdir PRODUCTS
+  847  cd CUSTOMERS
+  848  touch customerid.txt
+  849  cd ..
+  850  cd PRODUCTS
+  851  touch productid.txt
+  852  cd ..
+  853  ls
+  854  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | awk -F"\t" '$2 > /1/ {print $2}' | head 100
+  855  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | awk -F"\t" '$2 > /1/ {print $2}' | head -n 100
+  856  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | awk -F"\t" '$1' > /1/ {print $1}' | head -n 100
+  857  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | egrep [!1] | head -n 100
+  858  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | egrep [!1*] | head -n 100
+  859  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | grep -v 1* | head -n 100
+  860  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | egrep -v 1* | head -n 100
+  861  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | egrep -v '^1' | head -n 100
+  862  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | grep -v '^1' | head -n 100
+  863  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | grep -v -E '(1*)' | head -n 100 > test.txt
+  864  head test.txxt
+  865  head test.txt
+  866  vi test.txt
+  867  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | awk -F"\t" '$1 != 1' {print $2}' | head -n 100 > test.txt
+  868  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | awk -F"\t" '$1 != 1' {print $2}' | head -n 100 > test.txt
+  869  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | head -n 100 > test.txt
+  870  head text.txt
+  871  head test.txt
+  872  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | tail -n 100 > test.txt
+  873  head test.txt
+  874  tail test.txt
+  875  rm test.txt
+  876  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | tail -n 100 | cut -d '     ' -f 2 > customers.txt
+  877  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | tail -n 100 | cut -d '	' -f 2 > customers.txt
+  878  cat customers.txt
+  879  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | tail -n 100 | cut -d '	' -f 2 > products.txt
+  880  cat products.txt
+  881  file=customers.txt; cat $file | (while read line; do grep $line amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > assignments/a2/CUSTOMERS/${file}.txt
+  882  file=customers.txt; cat $file | (while read line; do grep $line amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > assignments/a2/CUSTOMERS/${file}.txt)
+  883  file=customers.txt; cat $file | (while read line; do grep $line amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > assignments/a2/CUSTOMERS/${file}.txt); done;
+  884  file=customers.txt; cat $file | (while read line; do (grep $line amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9) > assignments/a2/CUSTOMERS/${file}.txt); done;
+  885  file=customers.txt; cat $file | (while read line; do (grep $line amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9) | tee  assignments/a2/CUSTOMERS/${file}.txt); done;
+  886  file=customers.txt; cat $file | (while read line; do (grep $line amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 | tee  assignments/a2/CUSTOMERS/${file}.txt); done;
+  887  file=customers.txt; cat $file | (while read line; do (grep $line amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 | tee assignments/a2/CUSTOMERS/${file}.txt); done;
+  888  file=customers.txt; cat $file | (while read line; do grep $line amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 | tee assignments/a2/CUSTOMERS/${file}.txt); done;
+  889  f
+  890  file=customers.txt; cat $file | (while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9); done;
+  891  file=customers.txt; cat $file | (while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9; done; file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 | tee assignments/a2/CUSTOMERS/${file}.txt; done; file=customers.txt; cat $file | (while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv); done;
+  892  ls
+  893  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv; done;
+  894  file=customers.txt; cat $file | while read line; echo $line; done;
+  895  file=customers.txt; cat $file | while read line; echo $line; done
+  896  file=customers.txt; | (while read linecho $line); done
+  897  file=customers.txt; cat $file
+  898  cd ..
+  899  ls ws5/CUSTOMERS
+  900  cd ..
+  901  history > cmds.log
+  902  less ws5.txt
+  903  cd CS185C/ws/ws5/CUSTOMERS
+  904  cd CS185C/ws/ws5
+  905  cd ws/ws5
+  906  less ws5.txt
+  907  file=customers.txt; cat $file | while read line; echo $line; done
+  908  file=customers.txt; cat $file | while read line; echo $line; done;
+  909  file=customers.txt; cat $file | (while read line; echo $line); done
+  910  file=customers.txt; cat $file | (while read line; do echo $line); done
+  911  file=customers.txt; cat $file | while read line; do echo $line; done
+  912  file=customers.txt; cat $file | while read line; do grep $line amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 | tee assignments/a2/CUSTOMERS/${file}.txt; done;
+  913  file=customers.txt; cat $file | while read line; do grep $line amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > assignments/a2/CUSTOMERS/${file}.txt; done;
+  914  ls
+  915  cd CUSTOMERS
+  916  ls
+  917  rm customerid.txt
+  918  cd ..
+  919  ls PRODUCTS
+  920  rm productid.txt
+  921  rm productic.txt
+  922  ls
+  923  cd PRODUCTS
+  924  rm productid.txt
+  925  cd
+  926  file=customers.txt; cat $file | while read line; do grep ${line} amazon_reviews_us_Books_v1_02.tsv | dest=assignments/a2/CUSTOMERS/${line}.txt; mkdir $dest; cut -d '	' -f 8,9 > $dest; done;
+  927  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | dest=assignments/a2/CUSTOMERS/${line}.txt; mkdir $dest; cut -d '	' -f 8,9 > $dest; done;
+  928  ls
+  929  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > CUSTOMERS/${line}.txt; done;
+  930  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > "CUSTOMERS/${line}.txt"; done;
+  931  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > CUSTOMERS/"${line}.txt"; done;
+  932  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > CUSTOMERS/"${line}.txt"; done
+  933  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9
+  934  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > "CUSTOMERS/${line}.txt"; done; &
+  935  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > "CUSTOMERS/${line}.txt"; done &
+  936  jobs
+  937  file=products.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > "PRODUCTS/${line}.txt"; done &
+  938  jobs
+  939  ls
+  940  alias l=ls -latr
+  941  alias l="ls -latr"
+  942  l
+  943  alias w="ls -la | wc"
+  944  w
+  945  head .bashrc
+  946  vi .bashrc
+  947  vi .bash_aliases
+  948  echo "alias l="ls -latr"" >> .bash_aliases
+  949  echo "alias w="ls -la | wc"" >> .bash_aliases
+  950  head .bash_aliases
+  951  vi .bash_aliases
+  952  echo "alias w="ls -la | wc""
+  953  echo "alias l="ls -latr""
+  954  vi .bashrc
+  955  vi .bash_aliases
+  956  echo "alias l='ls -latr'"
+  957  echo "alias l='ls -latr'" >> .bash_aliases
+  958  echo "alias l='ls -la | wc'"
+  959  echo "alias l='ls -la | wc'" >> .bash_aliases
+  960  head .bash_aliases
+  961  vi .bash_aliases
+  962  echo "alias w='ls -la | wc'" >> .bash_aliases
+  963  l
+  964  w
+  965  ls
+  966  ls CUSTOMERS
+  967  cd CUSTOMERS
+  968  ls
+  969  head 1006 50608834.txt
+  970  head "1006 50608834.txt"
+  971  vi '1622 45273033.txt'
+  972  ls
+  973  rm *
+  974  ls
+  975  cd ..
+  976  cd PRODUCTS
+  977  ls
+  978  cd ..
+  979  ls
+  980  head customers.txt
+  981  head products.txt
+  982  cut -d '	' -f 2 customers.txt > customers.txt &
+  983  cut -d '	' -f 2 products.txt > products.txt &
+  984  ls customers.txt
+  985  head customers.txt
+  986  ls
+  987  vi customers.txt
+  988  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | tail -n 100 | cut -d ' ' -f 2 > products.txt
+  989  head products.txt
+  990  vi products.txt
+  991  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | tail -n 100 | cut -f 2 > products.txt
+  992  vi products.txt
+  993  cut -f 1 products.txt > products.txt
+  994  head products.txt
+  995  vi products.txt
+  996  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | tail -n 100 | cut -f 1 > products.txt
+  997  head products.txt
+  998  cut -f 2 products.txt
+  999  cut -f 1 products.txt
+ 1000  cut -d ' ' -f 1 products.txt
+ 1001  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F"\t" '$1 != 1 {print $2}' > products.txt
+ 1002  head products.txt
+ 1003  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' > products.txt
+ 1004  head products.txt
+ 1005  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' > customers.txt
+ 1006  head customers.txt
+ 1007  cat customers.txt
+ 1008  file=products.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > "PRODUCTS/${line}.txt"; done &
+ 1009  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > "CUSTOMERS/${line}.txt"; done &
+ 1010  job
+ 1011  jobs
+ 1012  ls
+ 1013  cd CUSTOMERS
+ 1014  ls
+ 1015  head 12069570.txt
+ 1016  ls
+ 1017  jobs
+ 1018  ls
+ 1019  cd ..
+ 1020  cd PRODUCTS
+ 1021  ls
+ 1022  jons
+ 1023  jobs
+ 1024  cd
+ 1025  fg 1
+ 1026  jobs
+ 1027  fg 2
+ 1028  rm *
+ 1029  ls
+ 1030  wget    https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Books_v1_02.tsv.gz
+ 1031  ls
+ 1032  gunzip amazon_reviews_us_Books_v1_02.tsv.gz
+ 1033  cd CUSTOMERS
+ 1034  ls
+ 1035  rm *
+ 1036  cd ..
+ 1037  cd PRODUCTS
+ 1038  rm *
+ 1039  cd ..
+ 1040  ls
+ 1041  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' > customers.txt
+ 1042  ls
+ 1043  rm customers.txt
+ 1044  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' > customers.txt &
+ 1045  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' > products.txt &
+ 1046  vi customers.txt
+ 1047  rm customers.txt
+ 1048  rm products.txt
+ 1049  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' | head -n 100 > customers.txt &
+ 1050  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' | head -n 100 > products.txt &
+ 1051  jobs
+ 1052  vi products.txt
+ 1053  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' > customers.txt &
+ 1054  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' > products.txt &
+ 1055  ls CUSTOMERS
+ 1056  jobs
+ 1057  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' | head -n 100 > customers.txt &
+ 1058  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' | head -n 100 > products.txt &
+ 1059  jobs
+ 1060  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > "CUSTOMERS/${line}.txt"; done &
+ 1061  file=products.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > "PRODUCTS/${line}.txt"; done &
+ 1062  vi customers.txt
+ 1063  jobs
+ 1064  ls CUSTOMERS
+ 1065  jobs
+ 1066  ls CUSTOMERS/12075869
+ 1067  ls CUSTOMERS/12075869.txt
+ 1068  head CUSTOMERS/12075869.txt
+ 1069  head CUSTOMERS/12094411.txt
+ 1070  tree -a CUSTOMERS
+ 1071  wc CUSTOMERS
+ 1072  ls | wc -l CUSTOMERS
+ 1073  ls CUSTOMERS | wc -l
+ 1074  ls PRODUCTS | wc -l
+ 1075  sudo apt install datamash
+ 1076  datamash
+ 1077  apt install datamash
+ 1078  mkdir CS185C/ws/ws5
+ 1152  rm datamash-1.3.tzr.gz
+ 1153  rm datamash-1.3.tar.gz
+ 1154  ls
+ 1155  cd datamash-1.3
+ 1156  src=/CUSTOMERS; for file in src; do echo $file; done
+ 1157  src=/CUSTOMERS; for file in $src; do echo $file; done
+ 1158  src=./CUSTOMERS; for file in $src; do echo $file; done
+ 1159  ls /CUSTOMERS
+ 1160  ls ./CUSTOMERS
+ 1161  ls ~/CUSTOMERS
+ 1162  src=~/CUSTOMERS; for file in $src; do echo $file; done
+ 1163  src='~/CUSTOMERS'; for file in $src; do echo $file; done
+ 1164  src='~/CUSTOMERS'; for file in '$src'; do echo $file; done
+ 1165  src='~/CUSTOMERS'; for file in $'src'; do echo $file; done
+ 1166  src="~/CUSTOMERS"; for file in "$src"; do echo $file; done
+ 1167  ls ~/CUSTOMERS
+ 1168  src="~/CUSTOMERS"; ls "$src"; do echo $file; done
+ 1169  src="~/CUSTOMERS"; ls "$src";
+ 1170  src="~/CUSTOMERS"; ls "$src"
+ 1171  ls /CUSTOMERS
+ 1172  src='~/CUSTOMERS'; ls "$src"
+ 1173  src='/CUSTOMERS'; ls $src
+ 1174  dirname "$1"
+ 1175  cd dirname "$1"
+ 1176  cd "$(dirname "$1")"
+ 1177  readlink
+ 1178  realpath
+ 1179  pwd
+ 1180  echo "$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
+ 1181  realpath CUSTOMERS
+ 1182  realpath ~/CUSTOMERS
+ 1183  src="realpath ~/CUSTOMERS"; ls src;
+ 1184  src="realpath ~/CUSTOMERS"; echo src;
+ 1185  src="realpath ~/CUSTOMERS"; echo "src";
+ 1186  src="realpath ~/CUSTOMERS"; sr;
+ 1187  src="realpath ~/CUSTOMERS"; src;
+ 1188  src="realpath ~/CUSTOMERS"; ls $src;
+ 1189  src="(realpath ~/CUSTOMERS)"; ls $src;
+ 1190  src=realpath ~/CUSTOMERS); ls $src;
+ 1191  src=realpath ~/CUSTOMERS; ls $src;
+ 1192  src='realpath ~/CUSTOMERS'; ls $src;
+ 1193  realpath CUSTOMERS
+ 1194  ls ../CUSTOMERS
+ 1195  ./datamash -W ppearson 1:2 < ../CUSTOMERS/
+ 1196  d ./datamash -W ppearson 1:2 < ../CUSTOMERS/
+ 1197  ./datamash -W ppearson 1:2 < ../CUSTOMERS/12069570.txt
+ 1198  ./datamash -W ppearson 1:2 < ../CUSTOMERS/12079497.txt
+ 1199  ./datamash -W ppearson 1:2 < ../CUSTOMERS/12093613.txt
+ 1200  head ../CUSTOMERS/12093613.txt
+ 1201  head ../CUSTOMERS/12194057.txt
+ 1202  head ../CUSTOMERS/12194067.txt
+ 1203  ./datamash -W ppearson 1:2 < ../CUSTOMERS/12194067.txt
+ 1204  ./datamash -W ppearson 1:2 < ../CUSTOMERS/12193944.txt
+ 1205  ./datamash -W ppearson 1:2 < ../CUSTOMERS/12192533.txt
+ 1206  ./datamash -W ppearson 1:2 < ../CUSTOMERS/12193909.txt
+ 1207  ./datamash -W ppearson 1:2 < ../CUSTOMERS/12191708.txt
+ 1208  ls ../CUSTOMERS/12191708.txt
+ 1209  head ../CUSTOMERS/12191708.txt
+ 1210  ./datamash -W ppearson 1:2 < ../CUSTOMERS/12166208.txt
+ 1211  ./datamash -W ppearson 1:2 < ../CUSTOMERS/12162862.txt
+ 1212  ./datamash -W ppearson 1:2 < ../CUSTOMERS/12161237.txt 
+ 1213  cd ..
+ 1214  ls
+ 1215  cut -d '        ' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' | tail -n 100 > customers.txt &
+ 1216  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' | tail -n 100 > customers.txt &
+ 1217  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' | tail -n 100 > products.txt &
+ 1218  jobs
+ 1219  ls CUSTOMERS
+ 1220  jobs
+ 1221  ls
+ 1222  jobs
+ 1223  head products.txt
+ 1224  head customers.txt
+ 1225  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > "CUSTOMERS/${line}.txt"; done &
+ 1226  file=products.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > "PRODUCTS/${line}.txt"; done &
+ 1227  jobs
+ 1228  ls CUSTOMERS
+ 1229  jobs
+ 1230  ls CUSTOMERS
+ 1231  head CUSTOMERS 12180650.txt
+ 1232  head CUSTOMERS/12180650.txt
+ 1233  ls PRODUCTS
+ 1234  ls CUSTOMERS | wc -l
+ 1235  head CUSTOMERS/0975599518.txt
+ 1236  head PRODUCTS/0975599518.txt
+ 1237  cd CUSTOMERS
+ 1238  rm *
+ 1239  cd ..
+ 1240  cd PRODUCTS
+ 1241  rm *
+ 1242  ls
+ 1243  cd ..
+ 1244  ls
+ 1245  cut -d '	' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' | tail -n 100 > customers.txt &
+ 1246  cut -d '	' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' | tail -n 100 > products.txt &
+ 1247  jobs
+ 1248  file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > "CUSTOMERS/${line}.txt"; done &
+ 1249  file=products.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '	' -f 8,9 > "PRODUCTS/${line}.txt"; done &
+ 1250  jobs
+ 1251  ls CUSTOMERS
+ 1252  jobs
+ 1253  ls PRODUCTS
+ 1254  ls CUSTOMERS | wc -l
+ 1255  ls CUSTOMERS/46134316
+ 1256  ls CUSTOMERS/46134316.txt
+ 1257  head CUSTOMERS/46134316.txt
+ 1258  ls
+ 1259  cd datamash-1.3
+ 1260  ls
+ 1261  0975599518.txt
+ 1262  ./datamash  -W ppearson 1:2 < ../PRODUCTS/1400046610.txt
+ 1263  src="../PRODUCTS/1400046610.txt" ./datamash  -W ppearson 1:2 < $src 
+ 1264  src="../PRODUCTS/1400046610.txt" ./datamash  -W ppearson 1:2 < $"src" 
+ 1265  src="../PRODUCTS/1400046610.txt" ./datamash  -W ppearson 1:2 < $src 
+ 1266  src="../PRODUCTS"; max=0; min=0; for line in src; do val=$((./datamash -W ppearson 1:2 < $line)); $max=$(($val>$max ? $val : $max); $min=$(($val<$min ? $val : $min); echo Max:${max} Min:${min}; done
+ 1267  src="../PRODUCTS"; max=0; min=0; for line in src; do val=$((./datamash -W ppearson 1:2 < $line)); $max=$(($val>$max ? $val : $max); $min=$(($val<$min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1268  src="../PRODUCTS"; max=0; min=0; for line in src; do val=$((./datamash -W ppearson 1:2 < $line)); $max=$(($val>$max ? $val : $max)); $min=$(($val<$min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1269  src="../PRODUCTS"; max=0; min=0; for line in $src; do val=$((./datamash -W ppearson 1:2 < $line)); $max=$(($val>$max ? $val : $max)); $min=$(($val<$min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1270  src='../PRODUCTS'; max=0; min=0; for line in $src; do val=$((./datamash -W ppearson 1:2 < $line)); $max=$(($val>$max ? $val : $max)); $min=$(($val<$min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1271  max=0; min=0; for line in ../PRODUCTS; do val=$((./datamash -W ppearson 1:2 < $line)); $max=$(($val>$max ? $val : $max)); $min=$(($val<$min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1272  ./datamash -W ppearson 1:2 < ../PRODUCTS
+ 1273  src='../PRODUCTS'; max=0; min=0; for file in $src; do val=$((./datamash -W ppearson 1:2 < $file)); $max=$(($val>$max ? $val : $max)); $min=$(($val<$min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1274  for file in ../PRODUCTS; do echo $file; ;done
+ 1275  for file in ../PRODUCTS; do echo $file; done
+ 1276  ls ../PRODUCTS
+ 1277  for file in ../PRODUCTS; do head $file; done
+ 1278  for file in ../PRODUCTS; do ls $file; done
+ 1279  for file in ../PRODUCTS; do for f in $file; do head $f; done; done
+ 1280  for file in ../PRODUCTS/*; do head $file; done
+ 1281  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=$((./datamash -W ppearson 1:2 < $file)); $max=$(($val>$max ? $val : $max)); $min=$(($val<$min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1282  ./datamash -W ppearson 1:2 < ../PRODUCTS/0060193395.txt
+ 1283  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val="$((./datamash -W ppearson 1:2 < $file))"; $max=$(($val>$max ? $val : $max)); $min=$(($val<$min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1284  src='../PRODUCTS'; max=0; min=0; val=0; for file in ${src}/*; do $val=$((./datamash -W ppearson 1:2 < $file)); $max=$(($val>$max ? $val : $max)); $min=$(($val<$min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1285  src='../PRODUCTS'; max=0; min=0; val=0; for file in ${src}/*; do val=$((./datamash -W ppearson 1:2 < $file)); $max=$(($val>$max ? $val : $max)); $min=$(($val<$min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1286  src='../PRODUCTS'; max=0; min=0; val=0; for file in ${src}/*; do $val=`./datamash -W ppearson 1:2 < $file`; $max=$(($val>$max ? $val : $max)); $min=$(($val<$min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1287  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; max=$(($val>$max ? $val : $max)); min=$(($val<$min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1288  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; max=$(($val > $max ? $val : $max)); min=$(($val < $min ? $val : $min)); echo Max:${max} Min:${min}; done
+ 1289  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; max=$((echo "$val > $max ? $val : $max" | bc)); min=$((echo "$val < $min ? $val : $min" | bc)); echo Max:${max} Min:${min}; done
+ 1290  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; max=echo "$val > $max ? $val : $max" | bc; min=echo "$val < $min ? $val : $min" | bc; echo Max:${max} Min:${min}; done
+ 1291  -0.024728559684989 > 0 ? -0.024728559684989 
+ 1292  echo -0.024728559684989 > 0 ? -0.024728559684989 
+ 1293  echo "-0.024728559684989 > 0 ? -0.024728559684989 : 0" | bc
+ 1294  echo "-0.024728559684989>0?-0.024728559684989 : 0" | bc
+ 1295  echo "-0.024728559684989>0 ? -0.024728559684989 : 0"
+ 1296  echo -0.024728559684989>0 ? -0.024728559684989 : 0
+ 1297  -0.024728559684989>0 ? -0.024728559684989 : 0
+ 1298  1+1
+ 1299  1+1 | bc
+ 1300  echo "1+1" | bc
+ 1301  let
+ 1302  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; let max=($val > $max ? $val : $max); let min=($val < $min ? $val : $min); echo Max:${max} Min:${min}; done
+ 1303  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; let max=(${val}>${max}?${val}:${max}); let min=(${val}<${min}?${val}:${min}); echo Max:${max} Min:${min}; done
+ 1304  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; let max=(${val}>${max}?${val}:${max}); let min=(${val}<${min}?${val}:${min}; echo Max:${max} Min:${min}; done
+ 1305  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; let max="${val}>${max}?${val}:${max}"; let min="${val}<${min}?${val}:${min}"; echo Max:${max} Min:${min}; done
+ 1306  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; echo "if (${val}>${max}) val=${val} else val=${max}" | bc; echo "if (${val}<${min}) val=${val} else val=${min}" | bc; echo Max:${max} Min:${min}; done
+ 1307  "if (( $(echo "${val}>${max}" | bc) )); then val=${val}; else val=${max};
+ 1308  fi
+ 1309  "if (( $(echo "${-2.11}>${2.06}" | bc) )); then val=${val}; else val=${max}; fi;
+ 1310  val=-2.11; max=2.08; min=0; "if (( $(echo "${val}>${max}" | bc) )); then max=${val}; else max=${max}; fi; echo $max;
+ 1311  fi
+ 1312  val=-2.11; max=2.08; min=0; "if (( $(echo "${val}>${max}" | bc) )); then max=${val}; else max=${max}; fi; echo $max;
+ 1313  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; echo "if (${val}>${max}) max=${val} else max=${max}" | bc; echo "if (${val}<${min}) min=${val} else min=${min}" | bc; echo Max:${max} Min:${min}; done
+ 1314  val=-2.11; max=2.08; min=0; if (( $(echo "${val}>${max}" | bc) )); then max=${val}; else max=${max}; fi; echo $max;
+ 1315  val=2.11; max=2.08; min=0; if (( $(echo "${val}>${max}" | bc) )); then max=${val}; else max=${max}; fi; echo $max;
+ 1316  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; if (( $(echo "${val}>${max}" | bc) )); then max=${val}; else max=${max}; fi; echo $max; echo "if (${val}<${min}) min=${val} else min=${min}" | bc; echo Max:${max} Min:${min}; done
+ 1317  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; if (($(echo "$val>$max" | bc))); then max=${val}; else max=${max}; fi; if (($(echo "$val<$min | bc))); then min=${val}; else min=${min}; fi; echo Max:${max} Min:${min}; done
+ 1318  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; if (($(echo "$val>$max" | bc))); then max=${val}; else max=${max}; fi; if (($(echo "$val<$min" | bc))); then min=${val}; else min=${min}; fi; echo Max:${max} Min:${min}; done
+ 1319  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; if $(echo "$val>$max" | bc); then max=${val}; else max=${max}; fi; if $(echo "$val<$min" | bc); then min=${val}; else min=${min}; fi; echo Max:${max} Min:${min}; done
+ 1320  src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; if (($(echo "$val>$max" | bc))); then max=${val}; else max=${max}; fi; if (($(echo "$val<$min" | bc))); then min=${val}; else min=${min}; fi; done; echo Max:${max} Min:${min};
+ 1321  w ../PRODUCTS
+ 1322  w ../PRODUCTS.*
+ 1323  w
+ 1324  cd
+ 1325  w PRODUCTS
+ 1326  ls
+ 1327  w PRODUCTS.*
+ 1328  cd PRODUCTS
+ 1329  w
+ 1330  head amazon_reviews_us_Books_v1_02.tsv 
+ 1331  cd
+ 1332  head amazon_reviews_us_Books_v1_02.tsv 
+ 1333  cd PRODUCTS
+ 1334  w
+ 1335  l
+ 1336  head 1576734587.txt
+ 1337  cut -d '	' -f2 1576734587.txt | sed s/$/" mean"/ 
+ 1338  cut -d '	' -f2 1576734587.txt | sed s/$/"	mean"/ 
+ 1339  file=1576734587.txt; total=0; mean=0; i=1; cut -d '     ' -f2 $file | (while read line; do total=$(echo $total+$line | bc); i=$(($i+1)); done; mean=$(($total/$i | bc)); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ 
+ 1340  file=1576734587.txt; total=0; mean=0; i=1; cut -d '     ' -f2 $file | while read line; do total=$(echo $total+$line | bc); i=$(($i+1)); done; mean=$(($total/$i | bc)); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ 
+ 1341  file=1576734587.txt; total=0; mean=0; i=1; cut -d '     ' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ 
+ 1342  file=1576734587.txt; total=0; mean=0; i=1; cut -d '     ' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; 
+ 1343  file=1576734587.txt; total=0; mean=0; i=1; cut -
+ 1344  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=(echo "$total/$i" | bc); echo $mean;
+ 1345  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=(echo "$total/$i" | bc); echo $mean
+ 1346  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); echo $mean
+ 1347  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); echo total; done; mean=$(echo "$total/$i" | bc); echo $mean
+ 1348  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); echo $total; done; mean=$(echo "$total/$i" | bc); echo $mean
+ 1349  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); echo $total; done; mean=$(echo "$total/$i" | bc)); echo $mean
+ 1350  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); echo $total; mean=$(echo "$total/$i" | bc)); done; echo $mean
+ 1351  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); echo $total; mean=$(echo "$total/$i" | bc); done; echo $mea
+ 1352  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); echo $total; mean=$(echo "$total/$i" | bc); done; echo $mean
+ 1353  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); mean=$(echo "$total/$i" | bc); echo $mean; done
+ 1354  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); mean=$(echo "$total/$i" | bc); done; echo $mean)
+ 1355  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); echo $mean)
+ 1356  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); echo $mean)
+ 1357  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); echo $mean); done;
+ 1358  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '   ' -f2 $file | sed s/$/" ${mean}"/
+ 1359  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '   ' -f2 $file | sed s/$/" ${mean}"/; done;
+ 1360  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/; done;
+ 1361  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/; done
+ 1362  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); done
+ 1363  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc)); cut -d '	' -f2 $file | sed s/$/"	${mean}"/; done
+ 1364  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/); done
+ 1365  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | do val=`./datamash -W ppearson 1:2`; if (($(echo "$val>$max" | bc))); then max=${val}; else max=${max}; fi; if (($(echo "$val<$min" | bc))); then min=${val}; else min=${min}; fi; done; echo Max:${max} Min:${min}); done
+ 1366  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; if (($(echo "$val>$max" | bc))); then max=${val}; else max=${max}; fi; if (($(echo "$val<$min" | bc))); then min=${val}; else min=${min}; fi; done; echo Max:${max} Min:${min}); done
+ 1367  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; if (($(echo "$val>$max" | bc))); then max=${val}; else max=${max}; fi; if (($(echo "$val<$min" | bc))); then min=${val}; else min=${min}; fi; done; echo Max:${max} Min:${min})
+ 1368  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; if (($(echo "$val>$max" | bc))); then max=${val}; else max=${max}; fi; if (($(echo "$val<$min" | bc))); then min=${val}; else min=${min}; fi; echo Max:${max} Min:${min}); done;
+ 1369  cd
+ 1370  cd ./datamash
+ 1371  cd .datamash
+ 1372  ls
+ 1373  cd datamash-1.3
+ 1374  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; if (($(echo "$val>$max" | bc))); then max=${val}; else max=${max}; fi; if (($(echo "$val<$min" | bc))); then min=${val}; else min=${min}; fi; echo Max:${max} Min:${min}); done;
+ 1375  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; echo $val; done;
+ 1376  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; echo $val); done;
+ 1377  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/); done;
+ 1378  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | ./datamash -W ppearson 1:2); done;
+ 1379  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; echo $val; done);
+ 1380  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; echo $val); done;
+ 1381  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; echo $val; )done;
+ 1382  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; echo $val; done);
+ 1383  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; echo $val; done );
+ 1384  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; echo $val; done));
+ 1385  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/"	${mean}"/ | val=`./datamash -W ppearson 1:2`; echo $val); done);
+ 1386  file=1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ | val=`./datamash -W ppearson 1:2`; echo $val);
+ 1387  file=../PRODUCTS/1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ | val=`./datamash -W ppearson 1:2`; echo $val);
+ 1388  file=../PRODUCTS/1576734587.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/);
+ 1389  cd
+ 1390  cd PRODUCTS
+ 1391  ls
+ 1392  cd
+ 1393  ls
+ 1394  cd datamash-1.3
+ 1395  file=../PRODUCTS/0671027360.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/  val=`./datamash -W ppearson 1:2`; echo $val);
+ 1396  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ | val=`./datamash -W ppearson 1:2`; echo $val);
+ 1397  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/);
+ 1398  ls
+ 1399  mkdir CUSTOMERS
+ 1400  ls
+ 1401  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ > CUSTOMERS/${line}.txt; ./datamash -W ppearson 1:2` < CUSTOMERS/${line}.txt);
+ 1402  ls CUSTOMERS
+ 1403  ls
+ 1404  cd CUSTOMERS
+ 1405  ls
+ 1406  cd ..
+ 1407  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ > "PRODUCTS/${line}.txt"; ./datamash -W ppearson 1:2 < CUSTOMERS/${line}.txt);
+ 1408  ls CUSTOMERS
+ 1409  ls
+ 1410  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ > CUSTOMERS/${line}.txt;
+ 1411  mkdir PRODUCTS
+ 1412  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ > PRODUCTS/${line}.txt; ./datamash -W ppearson 1:2 < PRODUCTS/${line}.txt);
+ 1413  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ > PRODUCTS/${line}.txt; val=`./datamash -W ppearson 1:2` < PRODUCTS/${line}.txt; echo $val);
+ 1414  ls PRODUCTS
+ 1415  ls
+ 1416  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ > "PRODUCTS/${line}.txt"; echo $line);
+ 1417  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ > PRODUCTS/$test.txt; val=`./datamash -W ppearson 1:2` < PRODUCTS/$test.txt; echo $val);
+ 1418  ls PRODUCTS
+ 1419  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ > CUSTOMER);
+ 1420  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ > "PRODUCTS/test.txt");
+ 1421  ls
+ 1422  ls PRODUCTS
+ 1423  head PRODUCTS/test.txt
+ 1424  val=`./datamash -W ppearson 1:2` .PRODUCTS/test.txt; echo $val;
+ 1425  ./datamash -W ppearson 1:2 .PRODUCTS/test.txt;
+ 1426  `./datamash -W ppearson 1:2` .PRODUCTS/test.txt;
+ 1427  ./datamash -W ppearson 1:2 < .PRODUCTS/test.txt;
+ 1428  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1429  ./datamash ppearson 1:2 < PRODUCTS/test.txt;
+ 1430  ./datamash -t ' ' ppearson 1:2 < PRODUCTS/test.txt;
+ 1431  ./datamash -t '	' ppearson 1:2 < PRODUCTS/test.txt;
+ 1432  ./datamash -t '	' -R 1  ppearson 1:2 < PRODUCTS/test.txt;
+ 1433  ./datamash -W -R 1  ppearson 1:2 < PRODUCTS/test.txt;
+ 1434  ./datamash -W -R 0 ppearson 1:2 < PRODUCTS/test.txt;
+ 1435  ./datamash -W -R 2 ppearson 1:2 < PRODUCTS/test.txt;
+ 1436  vi PRODUCTS/test.txt
+ 1437  ./datamash -W sum 1:2 < PRODUCTS/test.txt;
+ 1438  ./datamash -W mean 1:2 < PRODUCTS/test.txt;
+ 1439  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1440  ./datamash -W ppearson 1:2 < ..PRODUCTS/044652252X.txt;
+ 1441  ./datamash -W ppearson 1:2 < ../PRODUCTS/044652252X.txt;
+ 1442  touch PRODUCTS/test2.txt
+ 1443  vi PRODUCTS/test2.txt
+ 1444  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1445  vi PRODUCTS/test2.txt
+ 1446  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1447  vi PRODUCTS/test2.txt
+ 1448  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1449  vi PRODUCTS/test2.txt
+ 1450  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1451  vi PRODUCTS/test2.txt
+ 1452  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1453  vi PRODUCTS/test2.txt
+ 1454  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1455  vi PRODUCTS/test2.txt
+ 1456  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1457  vi PRODUCTS/test2.txt
+ 1458  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1459  vi PRODUCTS/test2.txt
+ 1460  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1461  vi ../PRODUCTS/044652252X.txt
+ 1462  vi PRODUCTS/test2.txt
+ 1463  vi ../PRODUCTS/044652252X.txt
+ 1464  vi PRODUCTS/test2.txt
+ 1465  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1466  vi PRODUCTS/test2.txt
+ 1467  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1468  vi PRODUCTS/test2.txt
+ 1469  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1470  vi PRODUCTS/test2.txt
+ 1471  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1472  vi PRODUCTS/test2.txt
+ 1473  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1474  vi PRODUCTS/test2.txt
+ 1475  ./datamash -W ppearson 1:2 < PRODUCTS/test2.txt;
+ 1476  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | sed s/$/" ${mean}"/ > "PRODUCTS/test.txt");
+ 1477  vi PRODUCTS/test2.txt
+ 1478  vi PRODUCTS/test.txt
+ 1479  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1480  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk '$1=$1" mean"' > "PRODUCTS/test.txt");
+ 1481  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1482  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk '$1=$1" ${mean}"' > "PRODUCTS/test.txt");
+ 1483  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1484  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk '$1=$1 ${mean}' > "PRODUCTS/test.txt");
+ 1485  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk '$1=$1" "$mean' > "PRODUCTS/test.txt");
+ 1486  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1487  vi PRODUCTS/test.txt
+ 1488  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk '$1="$1 $mean"' > "PRODUCTS/test.txt");
+ 1489  vi PRODUCTS/test.txt
+ 1490  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); echo $mean; cut -d '	' -f2 $file | awk '$1="$1 ${mean}"' > "PRODUCTS/test.txt");
+ 1491  vi PRODUCTS/test.txt
+ 1492  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); ; cut -d '	' -f2 $file | awk '$1="$1$mean"' > "PRODUCTS/test.txt");
+ 1493  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk '$1="$1$mean"' > "PRODUCTS/test.txt");
+ 1494  vi PRODUCTS/test.txt
+ 1495  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk '$1="$1	$mean"' > "PRODUCTS/test.txt");
+ 1496  vi PRODUCTS/test.txt
+ 1497  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk '{print $0, $mean}' > "PRODUCTS/test.txt");
+ 1498  vi PRODUCTS/test.txt
+ 1499  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk '{print $0 " $mean"}' > "PRODUCTS/test.txt");
+ 1500  vi PRODUCTS/test.txt
+ 1501  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk '{print $0 " ${mean}"}' > "PRODUCTS/test.txt");
+ 1502  vi PRODUCTS/test.txt
+ 1503  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk -v var=$mean '$1=$1 var' > "PRODUCTS/test.txt");
+ 1504  vi PRODUCTS/test.txt
+ 1505  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk -v var=$mean '$1=$1{FS=" "}var' > "PRODUCTS/test.txt");
+ 1506  vi PRODUCTS/test.txt
+ 1507  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk -v var=$mean $1="$1 var"' > "PRODUCTS/test.txt");
+ 1508  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk -v var=$mean '$1="$1 var"' > "PRODUCTS/test.txt");
+ 1509  vi PRODUCTS/test.txt
+ 1510  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk -v var=$mean '$1=$1"  "var' > "PRODUCTS/test.txt");
+ 1511  vi PRODUCTS/test.txt
+ 1512  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk -v var=$mean '$1=$1" "var' > "PRODUCTS/test.txt");
+ 1513  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1514  vi PRODUCTS/test.txt
+ 1515  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1516  vi PRODUCTS/test.txt
+ 1517  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1518  vi PRODUCTS/test.txt
+ 1519  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1520  vi PRODUCTS/test.txt
+ 1521  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1522  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk -v var=$mean $1="$1 var"' > "PRODUCTS/test.txt");
+ 1523  file=../PRODUCTS/044652252X.txt; total=0; mean=0; i=1; cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); cut -d '	' -f2 $file | awk -v var=$mean '$1=$1" "var' > "PRODUCTS/test.txt");
+ 1524  head PRODUCTS/test.txt
+ 1525  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1526  ls
+ 1527  cd datamash-1.3
+ 1528  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1529  vi PRODUCTS/test.txt
+ 1530  ./datamash -W ppearson 1:2 < PRODUCTS/test.txt;
+ 1531  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean<$min" | bc))); then min=${val}; else min=${min}; fi); done; echo Max:${max} Min:${min}; phung@12.42.205.180's password:
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-81-generic ppc64le)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Sep 19 11:16:14 UTC 2021
+
+  System load:  0.0                Processes:                 809
+  Usage of /:   14.5% of 97.92GB   Users logged in:           0
+  Memory usage: 76%                IPv4 address for ibmveth3: 12.42.205.180
+  Swap usage:   10%
+
+src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi); done; echo Max:${max} Min:${min};
+ 1532  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '     ' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi); done; echo Max:${max} Min:${min};
+ 1533  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '     ' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi); done; echo Max:${max} Min:${min});
+ 1534  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi); done; echo Max:${max} Min:${min});
+ 1535  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi); echo Max:${max} Min:${min}; done;);
+ 1536  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi); echo mean; echo Max:${max} Min:${min}; done;);
+ 1537  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi); echo $mean; echo Max:${max} Min:${min}; done;);
+ 1538  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; echo $total $i; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi); echo Max:${max} Min:${min}; done;);
+ 1539  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); echo mean; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi); echo Max:${max} Min:${min}; done;);
+ 1540  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); echo $mean; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi); echo Max:${max} Min:${min}; done;);
+ 1541  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; echo $mean $max; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi); echo Max:${max} Min:${min}; done;);
+ 1542  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;));
+ 1543  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}); done;);
+ 1544  src='../PRODUCTS'; max=0; min=0; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo $mean $min; echo Max:${max} Min:${min}); done;);
+ 1545  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; ))done;
+ 1546  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; )done);
+ 1547  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; (for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done));
+ 1548  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done);
+ 1549  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; )done;
+ 1550  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo $min $mean; echo Max:${max} Min:${min}; )done;
+ 1551  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; echo (($(echo "$mean<$min" | bc))); if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; )done;
+ 1552  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; echo $(echo "$mean<$min" | bc); if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; )done;
+ 1553  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; echo $mean $min $(echo "$mean<$min" | bc); if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; )done;
+ 1554  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done);
+ 1555  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;)
+ 1556  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; )done;
+ 1557  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc)); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1558  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc)))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1559  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1560  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; mean=$(echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; )done;
+ 1561  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | mean=$(while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; echo "$total/$i" | bc); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1562  kill 1
+ 1563  kill -9 %1
+ 1564  jobs
+ 1565  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | mean=$(while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; echo "$total/$i" | bc); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1566  kill -9 %1
+ 1567  jobs
+ 1568  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | echo (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; echo "$total/$i" | bc); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1569  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | mean=$(while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); echo "$total/$i" | bc; done); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1570  kill -9 %1
+ 1571  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | mean=$(while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); echo(echo "$total/$i" | bc); done); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1572  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | mean=$(while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); ("$total/$i" | bc); done); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1573  kill -9 %1
+ 1574  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do cut -d '	' -f2 $file | mean=$(while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); (("$total/$i")); done); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1575  kill -9 %1
+ 1576  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; mean=$(do cut -d '	' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); (echo "$total/$i" | bc); done); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1577  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); (echo "$total/$i" | bc); done); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1578  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc)); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1579  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc) | tee -a testerfile.txt); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1580  vi testerfile.txt
+ 1581  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f2 $file | while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; echo $total $i; (echo "$total/$i" | bc) | tee -a testerfile.txt); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1582  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; echo $total $i; (echo "$total/$i" | bc) | tee -a testerfile.txt)); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1583  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc))); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; echo Max:${max} Min:${min}; done;
+ 1584  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc))); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; done; echo Max:${max} Min:${min};
+ 1585  ls ../
+ 1586  head ../amazon_reviews_us_Books_v1_02_.tsv
+ 1587  cd
+ 1588  head ../amazon_reviews_us_Books_v1_02_.tsv
+ 1589  head amazon_reviews_us_Books_v1_02_.tsv
+ 1590  head amazon_reviews_us_Books_v1_02.tsv
+ 1591  cd datamash-1.3
+ 1592  src='../CUSTOMERS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc))); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; done; echo Max:${max} Min:${min};
+ 1593  src='../CUSTOMERS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc))); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; done; echo Max:${max} Min:${min}; &
+ 1594  src='../CUSTOMERS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc))); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; done; echo Max:${max} Min:${min} &
+ 1595  src='../CUSTOMERS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc))); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; done; echo Max:${max} Min:${min};
+ 1596  src='../CUSTOMERS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc))); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; done; echo Max:${max} Min:${min}
+ 1597  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f1 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc))); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; done; echo Max:${max} Min:${min};
+ 1598  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f1 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc))); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; done; echo Max:${max} Min:${min} &
+ 1599  src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '	' -f1 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc))); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; done; echo Max:${max} Min:${min};
+ 1600  cd
+ 1601  ls
+ 1602  history > cmds.log

@@ -1,0 +1,50 @@
+1) The standard books database had 1502381 unique customers, 779734 unique product ids, and 713712 unique product titles. Interestingly, there are very slightly less unique product titles than unique product ids.
+
+2) By consecutively using the two one-line commands below, I placed the helpfulness and review scores of 100 different customers into CUSTOMERS/customerid.txt.
+
+cut -d '        ' -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' | tail -n 100 > customers.txt &
+file=customers.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '   ' -f 8,9 > "CUSTOMERS/${line}.txt"; done &
+
+3) By consecutively using the two one-line commands below, I placed the helpfulness and review scores of 100 different products into PRODUCTS/productid.txt.
+
+cut -d '        ' -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -k 1 | awk -F" " '$1 != 1 {print $2}' | tail -n 100 > products.txt &
+file=products.txt; cat $file | while read line; do grep "$line" amazon_reviews_us_Books_v1_02.tsv | cut -d '    ' -f 8,9 > "PRODUCTS/${line}.txt"; done &
+
+4) I used the command below to create an alias "l", which displays a list of all files in the current directory.
+
+alias l "ls -latr"
+
+5) I used the command below to create an alias "w", which displays the number of files in the current directory.
+
+alias w "ls -la | wc"
+
+6) Rather than putting my aliases into .bashrc, I placed them into .bash_aliases, which is imported into .bashrc.
+
+7) I used the "w" alias to check that I had exactly 100 customer/product files, which I did.
+
+8) Using the one-line command below:
+
+src='../PRODUCTS'; max=0; min=0; for file in ${src}/*; do val=`./datamash -W ppearson 1:2 < $file`; if (($(echo "$val>$max" | bc))); then max=${val}; else max=${max}; fi; if (($(echo "$val<$min" | bc))); then min=${val}; else min=${min}; fi; done; echo Max:${max} Min:${min};
+
+I got the following back as the correlation range of the products.
+
+Max:0.19739977277477 Min:-0.54259014008841
+
+9) Using the one-line command below:
+
+src='../CUSTOMERS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '  ' -f2 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc))); if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; done; echo Max:${max} Min:${min};
+
+I got the following back as the mean range of the customers' helpfulness scores.
+
+Max:57 Min:2
+
+10) Using the one-line command below:
+
+src='../PRODUCTS'; max=-1000; min=1000; total=0; mean=0; i=1; for file in ${src}/*; do mean=$(cut -d '  ' -f1 $file | (while read line; do total=$(echo "$total+$line" | bc); i=$(($i+1)); done; (echo "$total/$i" | bc))); echo $mean $max $min; if (($(echo "$mean>$max" | bc))); then max=${mean}; else max=${max}; fi; if (($(echo "$mean<$min" | bc))); then min=${mean}; else min=${min}; fi; done; echo Max:${max} Min:${min};
+
+I got the following back as the mean range of the products' star ratings.
+
+Max:4 Min:1
+
+
+
